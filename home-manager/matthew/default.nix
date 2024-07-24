@@ -19,7 +19,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
 
-    #./neovim
+    ./neovim
   ];
 
   nixpkgs = {
@@ -61,7 +61,7 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
 
-  home.pacakges = with pkgs; [
+  home.packages = with pkgs; [
     hyfetch
     bottom
     bat
