@@ -27,17 +27,8 @@
       };
     };
 
-  nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-    in {
-      settings = {
-        experimental-features = "nix-command flakes";
-	nix-path = config.nix.nixPath;
-      };
+  nix.settings.experimental-features = "nix-command flakes";
       
-      registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
-      nixPath = lib.mapAttrsToList (n: "${n}=flake:${n}") flakeInputs;
-    };  
 
 
   # Use the systemd-boot EFI boot loader.
@@ -65,13 +56,13 @@
   # };
 
   # Enable the X11 windowing system.
-   services.xserver.enable = true;
+  # services.xserver.enable = true;
 
 
   
 
   # Configure keymap in X11
-   services.xserver.xkb.layout = "us";
+  # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
@@ -102,6 +93,7 @@
   # $ nix search wget
    environment.systemPackages = with pkgs; [
      neovim
+      waybar
    ];
 
   # Some programs need SUID wrappers, can be configured further or are
