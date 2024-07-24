@@ -57,7 +57,7 @@
          specialArgs = {inherit inputs outputs;};
          modules = [
            # > Our main nixos configuration file <
-           ./nixos/hp-laptop/configuration.nix
+           ./nixos/hp-laptop
          ];
        };
      };

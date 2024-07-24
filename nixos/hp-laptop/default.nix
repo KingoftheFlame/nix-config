@@ -1,27 +1,56 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(4) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
-{ config, lib, pkgs, ... }:
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}: 
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <home-manager/nixos>	
+      inputs.home-manager.nixosModules.home-manager	
     ];
+
+  nixpkgs = {
+    overlays = [
+      outputs.overlays.additions
+      outputs.overlays.modifications
+      outputs.overlays.unstable-packages
+
+      ];
+
+      config = {
+        allowUnfree = true;
+      };
+    };
+
+  nix = let
+    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+    in {
+      settings = {
+        experimental-features = "nix-command flakes";
+	nix-path = config.nix.nixPath;
+      };
+      
+      registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
+      nixPath = lib.mapAttrsToList (n: "${n}=flake:${n}") flakeInputs;
+    };  
+
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # networking.hostName = "nixos"; # Define your hostname.
+   networking.hostName = "hp-laptop"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
    networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
-  # time.timeZone = "Europe/Amsterdam";
+   time.timeZone = "America/Chicago";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -42,7 +71,7 @@
   
 
   # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
+   services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
@@ -74,8 +103,6 @@
    environment.systemPackages = with pkgs; [
      neovim
    ];
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
