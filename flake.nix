@@ -49,18 +49,26 @@
     # These are usually stuff you would upstream into home-manager
     homeManagerModules = import ./modules/home-manager;
 
+
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
-     nixosConfigurations = {
-       # FIXME replace with your hostname
-       hp-laptop = nixpkgs.lib.nixosSystem {
+    nixosConfigurations = {
+      hp-laptop = nixpkgs.lib.nixosSystem {
          specialArgs = {inherit inputs outputs;};
          modules = [
            # > Our main nixos configuration file <
            ./nixos/hp-laptop
-         ];
-       };
-     };
+        ];
+      };
+
+      home-server = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./nixos/home-server
+        ];
+      };
+    };
+
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
