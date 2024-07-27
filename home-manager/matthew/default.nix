@@ -16,8 +16,6 @@
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
 
-    # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
     ./terminal
     ./neovim
   ];
@@ -62,11 +60,6 @@
   # home.packages = with pkgs; [ steam ];
 
   home.packages = with pkgs; [
-    # hyfetch
-    # bottom
-    # bat
-    # zellij
-
     openssh
 
     git
@@ -86,9 +79,9 @@
 
   ];
 
-  
 
-  # Enable home-manager and git
+
+  # Enable home-manager 
   programs.home-manager.enable = true;
 
   # Nicely reload system units when changing configs

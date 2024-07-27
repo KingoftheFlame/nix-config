@@ -12,9 +12,6 @@
 
   programs.starship = {
     enable = true;
-    settings = {
-      format = "$all";
-    };
   };
 
   programs.zellij = {

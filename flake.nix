@@ -12,6 +12,12 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Nu Scripts
+    # nu-scripts = {
+    #   url = "github:nushell/nu_scripts";
+    #   flake = false;
+    # };
   };
 
   outputs = {
@@ -68,7 +74,6 @@
         ];
       };
     };
-
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
