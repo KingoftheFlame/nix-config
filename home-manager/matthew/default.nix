@@ -18,7 +18,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-
+    ./terminal
     ./neovim
   ];
 
@@ -62,10 +62,10 @@
   # home.packages = with pkgs; [ steam ];
 
   home.packages = with pkgs; [
-    hyfetch
-    bottom
-    bat
-    zellij
+    # hyfetch
+    # bottom
+    # bat
+    # zellij
 
     openssh
 
