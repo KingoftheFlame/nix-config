@@ -16,6 +16,9 @@
 
   programs.starship = {
     enable = true;
+    settings = {
+      format = "$all$directory$character";
+    };
   };
 
   programs.zellij = {
