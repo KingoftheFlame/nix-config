@@ -14,10 +14,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Nu Scripts
-    # nu-scripts = {
-    #   url = "github:nushell/nu_scripts";
-    #   flake = false;
-    # };
+    nu-scripts = {
+      url = "github:nushell/nu_scripts";
+      flake = false;
+    };
   };
 
   outputs = {

@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs,  ... }:
 {
   programs.nushell = {
     enable = true;
@@ -12,6 +12,7 @@
     envFile.source = ./env.nu;
 
   };
+
 
   programs.starship = {
     enable = true;
