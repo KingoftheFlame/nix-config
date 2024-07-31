@@ -63,6 +63,8 @@
       lualine-nvim
       nvim-web-devicons
 
+      # rust-lang/rust.vim
+
       {
         plugin = (nvim-treesitter.withPlugins (p: [
           p.tree-sitter-nix

@@ -76,6 +76,8 @@
     python3
     rustup
 
+    helix
+
     lua-language-server
     nixd
 
