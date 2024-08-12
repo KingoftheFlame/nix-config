@@ -91,10 +91,12 @@
      isNormalUser = true;
      extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
      initialPassword = "pw123";
-  #   packages = with pkgs; [
+     packages = with pkgs; [
   #     firefox
   #     tree
-  #   ];
+        nushell
+     ];
+     shell = pkgs.nushell;
    };
 
   # List packages installed in system profile. To search, run:
