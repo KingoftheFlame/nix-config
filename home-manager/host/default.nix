@@ -50,8 +50,8 @@
   };
 
   home = {
-    username = "matthew";
-    homeDirectory = "/home/matthew";
+    username = "host";
+    homeDirectory = "/home/host";
   };
 
   #Todo: Figure out how to add this to flake in order to avoid the suffering of updating the rev
