@@ -81,9 +81,7 @@
     lua-language-server
     nixd
 
-    android-studio
-
-    strawberry
+    docker-compose
 
   ];
 

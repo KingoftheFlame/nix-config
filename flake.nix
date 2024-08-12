@@ -79,7 +79,7 @@
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
 
-      "matthew" = home-manager.lib.homeManagerConfiguration {
+      "matthew@Mothership" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
@@ -88,6 +88,13 @@
         ];
       };
 
+      "host@home-server" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; 
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          ./home-manager/host
+        ];
+      };
     };
   };
 }
