@@ -9,5 +9,5 @@ $env.PATH = (
   | uniq # filter so the paths are unique
 ) 
 
-$env.EDITOR = nvim
+$env.EDITOR = hx
 
