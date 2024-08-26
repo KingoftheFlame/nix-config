@@ -1,4 +1,4 @@
-{ config, pkgs, inputs,  ... }:
+{ config, pkgs, inputs, outputs,  ... }:
 {
   programs.nushell = {
     enable = true;
@@ -13,6 +13,7 @@
 
   };
 
+  home.file.".config/nushell/nu_scripts".source = outputs.nu-scripts;
 
   programs.starship = {
     enable = true;

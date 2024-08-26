@@ -14,6 +14,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Nu Scripts
+    #TODO: investigate converting this into git submodule and updating it that way
     nu-scripts = {
       url = "github:nushell/nu_scripts";
       flake = false;

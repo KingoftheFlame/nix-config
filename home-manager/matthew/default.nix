@@ -55,15 +55,7 @@
     homeDirectory = "/home/matthew";
   };
 
-  #Todo: Figure out how to add this to flake in order to avoid the suffering of updating the rev
-  # home.file.".config/nushell/nu_scripts".source = pkgs.fetchgit {
-  #   url = "https://github.com/nushell/nu_scripts.git";
-  #   rev = "54546c8bf2ea69768eec2acf4c6cbfce4e879dff";
-  #   hash = "sha256-S3ORCFLm4OduqBqp7jTSBhXAMiO29irXYy5My8p1yT0=";
-  # }; 
-
-  home.file.".config/nushell/nu_scripts".source = outputs.nu-scripts;
-  
+ 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
