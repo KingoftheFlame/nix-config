@@ -83,7 +83,11 @@
 
     android-studio
 
-    strawberry
+    #strawberry
+
+    wslu
+
+    cloudflared
 
   ];
 
