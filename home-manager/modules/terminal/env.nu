@@ -9,5 +9,8 @@ $env.PATH = (
   | uniq # filter so the paths are unique
 ) 
 
-$env.EDITOR = hx
+#Note for future, if path is broken it is because something else in this file broke with an update
+#this makes the whole file not get compiled
+
+$env.EDITOR = 'hx'
 
