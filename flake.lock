@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1724435763,
-        "narHash": "sha256-UNky3lJNGQtUEXT2OY8gMxejakSWPTfWKvpFkpFlAfM=",
+        "lastModified": 1723399884,
+        "narHash": "sha256-97wn0ihhGqfMb8WcUgzzkM/TuAxce2Gd20A8oiruju4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c2cd2a52e02f1dfa1c88f95abeb89298d46023be",
+        "rev": "086f619dd991a4d355c07837448244029fc2d9ab",
         "type": "github"
       },
       "original": {
@@ -23,11 +23,19 @@
     },
     "nixpkgs": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1724474320,
         "narHash": "sha256-cyQj71a0xhfB/1nE6afuYrCpDOdLolt3Bj0kzMNJAmA=",
         "owner": "nixos",
         "repo": "nixpkgs",
         "rev": "0e4fd9c60f49174f745cba3659a89c3b202e0f84",
+=======
+        "lastModified": 1723421109,
+        "narHash": "sha256-gLYSLWnZ1M+b/yEWNHRE/un0DK5XDd3xGg9gs2XUXGg=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "88beb3d9fe7d9fc513520f8ed0946bb78d02d07e",
+>>>>>>> parent of e6774d0 (flake update)
         "type": "github"
       },
       "original": {
@@ -39,11 +47,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1724224976,
-        "narHash": "sha256-Z/ELQhrSd7bMzTO8r7NZgi9g5emh+aRKoCdaAv5fiO0=",
+        "lastModified": 1723175592,
+        "narHash": "sha256-M0xJ3FbDUc4fRZ84dPGx5VvgFsOzds77KiBMW/mMTnI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c374d94f1536013ca8e92341b540eba4c22f9c62",
+        "rev": "5e0ca22929f3342b19569b21b2f3462f053e497b",
         "type": "github"
       },
       "original": {
@@ -56,11 +64,11 @@
     "nu-scripts": {
       "flake": false,
       "locked": {
-        "lastModified": 1724069317,
-        "narHash": "sha256-qLezX1/5w4J3hF/cRQYtkV0nq/1fwTwz0/kAaFGTiWI=",
+        "lastModified": 1723321862,
+        "narHash": "sha256-AnnjK2bZ1TqZVueqD8edM4ZHBxJ6Gh4g3npoyXXKxyk=",
         "owner": "nushell",
         "repo": "nu_scripts",
-        "rev": "7bf4491cbff7bb57b83ef4dda9f26cdcd2008a7f",
+        "rev": "e0ccb8fecccbdbf8938274de5e95268b34e9e0a8",
         "type": "github"
       },
       "original": {
