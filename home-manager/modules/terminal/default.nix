@@ -37,10 +37,6 @@
     enable = true;
     userName = "kingoftheflame";
     userEmail = "matthew.l.mcclure186@gmail.com";
-
-    extraConfig = {
-      credential.helper = "!/home/matthew/.nix-profile/bin/gh auth git-credential";
-    };
   };
    
   programs.zellij = {
@@ -63,9 +59,17 @@
      };
   };
 
-  programs.bottom.enable = true;
+  programs.bottom = {
+    enable = true;
+    settings = {
+      #fill out when I give a shit
+    };
+  };
 
-  programs.bat.enable = true;
+  programs.bat = {
+    enable = true;
+    #add configuration when you care
+  };
 
   programs.ripgrep = {
       enable = true;
