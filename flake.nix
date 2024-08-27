@@ -81,12 +81,13 @@
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
 
-      "matthew@Mothership" = home-manager.lib.homeManagerConfiguration {
+      "matthew-wsl" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
           ./home-manager/matthew
+          ./home-manager/modules/wsl.nix
         ];
       };
 

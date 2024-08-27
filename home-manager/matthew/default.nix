@@ -77,8 +77,6 @@
 
     #strawberry
 
-    wslu
-
     cloudflared
 
   ];
