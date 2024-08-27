@@ -33,6 +33,10 @@
     };
   };
 
+  programs.gh-dash = {
+    enable = true;
+  };
+
   programs.git = {
     enable = true;
     userName = "kingoftheflame";
