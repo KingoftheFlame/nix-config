@@ -63,9 +63,6 @@
   home.packages = with pkgs; [
     openssh
 
-    git
-    gh
-  
     gcc
     pnpm
     python3

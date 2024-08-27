@@ -22,6 +22,27 @@
     };
   };
 
+  programs.gh = {
+    enable = true;
+    settings = {
+      git_protocol = "https";
+      editor = "hx";
+      aliases = {
+        co = "pr checkout";
+      };
+    };
+  };
+
+  programs.git = {
+    enable = true;
+    userName = "kingoftheflame";
+    userEmail = "matthew.l.mcclure186@gmail.com";
+
+    extraConfig = {
+      credential.helper = "!/home/matthew/.nix-profile/bin/gh auth git-credential";
+    };
+  };
+   
   programs.zellij = {
     enable = true;
   };
