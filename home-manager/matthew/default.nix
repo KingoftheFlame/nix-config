@@ -67,7 +67,8 @@
     pnpm
     python3
     rustup
-
+    lldb
+    
     helix
 
     lua-language-server
