@@ -17,6 +17,7 @@
     # inputs.nix-colors.homeManagerModules.default
     ../modules/terminal
     ../modules/neovim
+    ../modules/sci-tools.nix
   ];
 
 
