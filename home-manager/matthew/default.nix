@@ -66,7 +66,7 @@
 
     gcc
     pnpm
-    python3
+    #python3
     rustup
     lldb
     
