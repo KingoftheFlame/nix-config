@@ -50,7 +50,7 @@
   programs.hyfetch ={
     enable = true;
     settings = {
-      "preset" = "rainbow";
+      "preset" = "gay-men";
       "mode" = "rgb";
       "light_dark" = "dark";
       "lightness" = 0.5;
@@ -78,5 +78,9 @@
   programs.ripgrep = {
       enable = true;
   };
+
+  # programs.speedtest-rs = {
+  #   enable = true;
+  # };
 
 }
