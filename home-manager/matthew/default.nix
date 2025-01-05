@@ -70,10 +70,11 @@
     rustup
     lldb
     
-    helix
+    #helix
 
     lua-language-server
     nixd
+    nixpkgs-fmt
 
     android-studio
 

@@ -15,6 +15,13 @@
 
   home.file.".config/nushell/nu_scripts".source = outputs.nu-scripts;
 
+  programs.helix = {
+    enable = true;
+    languages = {
+      nix = {formatter = "nixpkgs-fmt";};
+    };
+  };
+
   programs.starship = {
     enable = true;
     settings = {
