@@ -42,6 +42,7 @@
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
    networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+   networking.useDHCP = false;
 
   # Set your time zone.
    time.timeZone = "America/Chicago";
@@ -73,7 +74,7 @@
   
 
   # Configure keymap in X11
-   services.xserver.layout = "us";
+   services.xserver.xkb.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
