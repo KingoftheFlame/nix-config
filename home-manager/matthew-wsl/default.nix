@@ -16,8 +16,8 @@
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
     ../modules/terminal
-    #../modules/neovim
-    #../modules/sci-tools.nix
+    ../modules/neovim
+    ../modules/sci-tools.nix
   ];
 
 
@@ -65,16 +65,22 @@
     openssh
 
     gcc
-    #pnpm
+    pnpm
     #python3
     rustup
     lldb
-    google-chrome
     
     #helix
 
+    lua-language-server
     nixd
     nixpkgs-fmt
+
+    android-studio
+
+    #strawberry
+
+    cloudflared
 
   ];
 
