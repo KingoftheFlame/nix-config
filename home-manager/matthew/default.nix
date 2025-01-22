@@ -16,6 +16,7 @@
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
     ../modules/terminal
+    ../modules/gui
     #../modules/neovim
     #../modules/sci-tools.nix
   ];
@@ -69,7 +70,11 @@
     #python3
     rustup
     lldb
+
+    #gui
     google-chrome
+    steam
+
     
     #helix
 
