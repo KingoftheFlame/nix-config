@@ -38,6 +38,7 @@
         co = "pr checkout";
       };
     };
+    extensions = [pkgs.gh-dash];
   };
 
   programs.gh-dash = {
