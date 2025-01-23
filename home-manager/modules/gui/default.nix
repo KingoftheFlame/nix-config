@@ -1,10 +1,17 @@
 {config, pkgs, inputs, ...}:
 {
   home.packages = with pkgs; [
-    google-chrome
-    discord
-    youtube-music
+    
+    #Productivity
     obsidian
+  
+    #Media
+    youtube-music
+    vlc
+  
+    google-chrome
+
+    discord
 
     rustdesk
 
