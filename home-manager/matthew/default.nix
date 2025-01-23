@@ -73,7 +73,7 @@
 
     #gui
     google-chrome
-    steam
+    # steam
 
     
     #helix
