@@ -6,8 +6,7 @@
     youtube-music
     obsidian
 
-    # rustdesk
+    rustdesk
 
-    alacritty
   ];
 }
