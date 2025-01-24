@@ -14,7 +14,4 @@ $env.PATH = (
 
 $env.EDITOR = 'hx'
 
-#Find a way to split nu files to where this is only present in wsl nix instances
-#$env.BROWSER = 'wslview'
-
 $env.XDG_DATA_DIRS = ($env.HOME | path join .nix-profile/share:$HOME/.share:"${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}")

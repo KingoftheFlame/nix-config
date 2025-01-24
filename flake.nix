@@ -96,7 +96,6 @@
         modules = [
           # > Our main home-manager configuration file <
           ./home-manager/matthew-wsl
-          ./home-manager/modules/wsl.nix
         ];
       };
 

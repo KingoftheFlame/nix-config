@@ -1,5 +1,12 @@
-{ config, pkgs, inputs, outputs,  ... }:
+{ config, pkgs, lib, inputs, outputs,  ... }:
 {
+
+  options = {
+    wsl.enable = lib.mkEnableOption "enables wsl settings for terminal";  
+  };
+
+  config = {  
+  
   programs.nushell = {
     enable = true;
 
@@ -8,11 +15,14 @@
       vim = "nvim";
     };
 
-    configFile.source = ./config.nu;
     envFile.source = ./env.nu;
+    configFile.source = ./config.nu;
+
+    # extraEnv = if config.wsl.enable then "$env.BROWSER = \'wslview\'" else "";
 
   };
 
+  programs.nushell.extraEnv = lib.mkIf(config.wsl.enable) "$env.BROWSER = \'wslview\'";
   home.file.".config/nushell/nu_scripts".source = outputs.nu-scripts;
 
   programs.helix = {
@@ -91,4 +101,5 @@
   #   enable = true;
   # };
 
+};
 }

@@ -46,6 +46,8 @@
     };
   };
 
+  wsl.enable = true;
+
   nix = {
     package = pkgs.nix;
     settings.experimental-features = [ "nix-command" "flakes" ];
@@ -81,10 +83,9 @@
     #strawberry
 
     cloudflared
+    wslu
 
   ];
-
-
 
   # Enable home-manager 
   programs.home-manager.enable = true;
