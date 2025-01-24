@@ -13,7 +13,7 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "acpi_backlight=native"];
+  boot.kernelParams = [ "acpi_backlight=video"];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/107bdbbb-e7c7-4ce1-9b07-1d3a463bb7d5";
