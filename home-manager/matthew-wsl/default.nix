@@ -51,6 +51,14 @@
   nix = {
     package = pkgs.nix;
     settings.experimental-features = [ "nix-command" "flakes" ];
+
+    #auto garbage collect
+    gc = {
+      automatic = true;
+      frequency = "daily";
+      options = "--delete-older-than 10d";
+    };
+
   };
 
   home = {
