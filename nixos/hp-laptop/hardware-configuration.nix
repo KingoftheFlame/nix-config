@@ -13,7 +13,10 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelParams = [ "acpi_backlight=video"];
+  boot.kernelParams = [ "acpi_backlight=video" "resume_offset=16164864"];
+
+  boot.resumeDevice = "/dev/disk/by-uuid/107bdbbb-e7c7-4ce1-9b07-1d3a463bb7d5";
+  powerManagement.enable = true;  
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/107bdbbb-e7c7-4ce1-9b07-1d3a463bb7d5";
@@ -26,7 +29,12 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices = [ ];
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 32 * 1024; # 32GB in MB
+    }
+  ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
