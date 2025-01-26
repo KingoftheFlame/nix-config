@@ -70,9 +70,12 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the Cinnamon Desktop Environment.
+  # Enable the Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.cinnamon.enable = true;
+  # services.xserver.desktopManager.cinnamon.enable = true; #alright
+  # services.xserver.desktopManager.xfce.enable = true; #good top bar, macos bottom panel
+  # services.xserver.desktopManager.mate.enable = true; #windows xp ah dm
+  services.xserver.desktopManager.budgie.enable = true; #cinnamon but better
 
   # Configure keymap in X11
   services.xserver = {
@@ -116,7 +119,9 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-    programs.steam = {
+
+  #steam
+  programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
