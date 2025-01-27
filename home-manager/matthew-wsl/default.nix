@@ -15,6 +15,7 @@
     outputs.homeManagerModules.terminal
     outputs.homeManagerModules.neovim
     outputs.homeManagerModules.sci-tools
+    outputs.homeManagerModules.wsl
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -46,8 +47,7 @@
     };
   };
 
-  wsl.enable = true;
-
+  
   nix = {
     package = pkgs.nix;
     settings.experimental-features = [ "nix-command" "flakes" ];

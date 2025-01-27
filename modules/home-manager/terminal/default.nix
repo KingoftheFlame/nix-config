@@ -1,13 +1,8 @@
 { config, pkgs, lib, inputs, outputs,  ... }:
 {
 
-  options = {
-    wsl.enable = lib.mkEnableOption "enables wsl settings for terminal";  
-  };
 
-  config = {  
-  
-  programs.nushell = {
+  programs.nushell = let envStrs = []; in{
     enable = true;
 
     shellAliases = {
@@ -18,12 +13,20 @@
     envFile.source = ./env.nu;
     configFile.source = ./config.nu;
 
-    # extraEnv = if config.wsl.enable then "$env.BROWSER = \'wslview\'" else "";
+    extraEnv = ''
+      $env.scripts_path = '${pkgs.nu_scripts}/share/nu_scripts'
+    '';
+
 
   };
 
-  programs.nushell.extraEnv = lib.mkIf(config.wsl.enable) "$env.BROWSER = \'wslview\'";
-  home.file.".config/nushell/nu_scripts".source = outputs.nu-scripts;
+
+  #WSL
+  # programs.nushell.extraEnv = lib.mkIf(config.wsl.enable) programs.nushell.extraEnv + "$env.BROWSER = \'wslview\'";
+  
+  # home.file.".config/nushell/nu_scripts".source = outputs.nu-scripts;
+  home.packages = [pkgs.nu_scripts];
+   
 
   programs.helix = {
     enable = true;
@@ -34,6 +37,7 @@
 
   programs.starship = {
     enable = true;
+    enableNushellIntegration = true;
     settings = {
       format = "$all$directory$character";
     };
@@ -101,5 +105,4 @@
   #   enable = true;
   # };
 
-};
 }

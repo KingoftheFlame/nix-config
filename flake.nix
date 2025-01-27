@@ -12,13 +12,6 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    # Nu Scripts
-    #TODO: investigate converting this into git submodule and updating it that way
-    nu-scripts = {
-      url = "github:nushell/nu_scripts";
-      flake = false;
-    };
   };
 
   outputs = {
@@ -56,8 +49,6 @@
     # Reusable home-manager modules you might want to export
     # These are usually stuff you would upstream into home-manager
     homeManagerModules = import ./modules/home-manager;
-
-    nu-scripts = inputs.nu-scripts;
 
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'

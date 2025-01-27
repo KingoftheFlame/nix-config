@@ -6,8 +6,9 @@
 
   #terminal
   terminal = import ./terminal;
-  helix = import ./helix;
   neovim = import ./neovim;
+
+  wsl = import ./wsl.nix;
 
   gui = import ./gui;
 

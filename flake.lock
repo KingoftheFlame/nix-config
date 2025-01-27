@@ -53,28 +53,11 @@
         "type": "github"
       }
     },
-    "nu-scripts": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1737116789,
-        "narHash": "sha256-nO7Dyg1ZxjSInkWW+kHa32H0P1CQ6vc6ODLLTj2abcI=",
-        "owner": "nushell",
-        "repo": "nu_scripts",
-        "rev": "fd686c0b0c10e284b1da72d6c3c42ab28c7504a7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nushell",
-        "repo": "nu_scripts",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-unstable": "nixpkgs-unstable",
-        "nu-scripts": "nu-scripts"
+        "nixpkgs-unstable": "nixpkgs-unstable"
       }
     }
   },
