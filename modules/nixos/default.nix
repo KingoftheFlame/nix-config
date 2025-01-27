@@ -3,4 +3,6 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
+  garbage = import ./garbage.nix;
+  ld-fix = import ./ld-fix.nix;
 }

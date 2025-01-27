@@ -15,7 +15,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../modules/garbage.nix
+      outputs.nixosModules.garbage
+      outputs.nixosModules.ld-fix     
       inputs.home-manager.nixosModules.home-manager	
     ];
 

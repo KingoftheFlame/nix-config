@@ -12,13 +12,15 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
+    outputs.homeManagerModules.terminal
+    outputs.homeManagerModules.gui
+    outputs.homeManagerModules.sci-tools
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
-    ../modules/terminal
-    ../modules/gui
-    #../modules/neovim
-    #../modules/sci-tools.nix
+    
+    #import extra config in other files
+    # ./nvim.nix
   ];
 
 
