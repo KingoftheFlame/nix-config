@@ -12,9 +12,11 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
+    outputs.homeManagerModules.options
     outputs.homeManagerModules.terminal
     outputs.homeManagerModules.gui
     outputs.homeManagerModules.sci-tools
+    outputs.homeManagerModules.music
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -23,6 +25,7 @@
     # ./nvim.nix
   ];
 
+  gui.enable = true;
 
   nixpkgs = {
     # You can add overlays here

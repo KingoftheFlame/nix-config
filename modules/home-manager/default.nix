@@ -4,6 +4,8 @@
   # List your module files here
   # my-module = import ./my-module.nix;
 
+  options = import ./options.nix;
+
   #terminal
   terminal = import ./terminal;
   neovim = import ./neovim;
@@ -11,6 +13,7 @@
   wsl = import ./wsl.nix;
 
   gui = import ./gui;
+  music = import ./music.nix;
 
   sci-tools = import ./sci-tools.nix;
 }

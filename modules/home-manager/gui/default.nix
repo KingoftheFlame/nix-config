@@ -1,19 +1,25 @@
-{config, pkgs, inputs, ...}:
+{config, pkgs, inputs, lib, ...}:
 {
-  home.packages = with pkgs; [
+  # options = {
+    # gui.enable = lib.mkEnableOption "";
+  # };
+
+  # config = lib.mkIf config.gui.enable{
+    home.packages = with pkgs; [
     
-    #Productivity
-    obsidian
+      #Productivity
+      obsidian
   
-    #Media
-    youtube-music
-    vlc
+      #Media
+      # youtube-music
+      vlc
   
-    google-chrome
+      google-chrome
 
-    discord
+      discord
 
-    rustdesk
+      rustdesk
 
-  ];
+    ];
+  # };
 }
