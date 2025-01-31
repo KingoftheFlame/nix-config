@@ -16,7 +16,7 @@
       strawberry
       audacious
       lollypop
-      amarok
+      # amarok
       sayonara
     ];}
   ];
