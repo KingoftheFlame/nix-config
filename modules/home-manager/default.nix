@@ -12,8 +12,9 @@
 
   wsl = import ./wsl.nix;
 
-  gui = import ./gui;
+  games = import ./games.nix;
   music = import ./music.nix;
+  internet = import ./internet.nix;
 
   sci-tools = import ./sci-tools.nix;
 }

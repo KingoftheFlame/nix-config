@@ -9,14 +9,15 @@
   ...
 }: {
   # You can import other home-manager modules here
-  imports = [
+  imports = with outputs.homeManagerModules;[
     # If you want to use modules your own flake exports (from modules/home-manager):
-    # outputs.homeManagerModules.example
-    outputs.homeManagerModules.options
-    outputs.homeManagerModules.terminal
-    outputs.homeManagerModules.gui
-    outputs.homeManagerModules.sci-tools
-    outputs.homeManagerModules.music
+    
+    options
+    music
+    sci-tools
+    internet
+    terminal
+    games
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -26,6 +27,7 @@
   ];
 
   gui.enable = true;
+  games.enable = true;
 
   nixpkgs = {
     # You can add overlays here
