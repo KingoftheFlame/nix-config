@@ -110,7 +110,7 @@
   users.users.matthew = {
     isNormalUser = true;
     description = "Matthew M";
-    extraGroups = [ "networkmanager" "wheel" "audio"];
+    extraGroups = [ "networkmanager" "wheel" "audio" "docker"];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -121,7 +121,7 @@
 
 
   # Install firefox.
-  programs.firefox.enable = true;
+  # programs.firefox.enable = true;
 
   #steam
   programs.steam = {

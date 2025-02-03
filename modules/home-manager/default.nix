@@ -15,6 +15,7 @@
   games = import ./games.nix;
   music = import ./music.nix;
   internet = import ./internet.nix;
+  firefox = import ./firefox;
 
   sci-tools = import ./sci-tools.nix;
 }
