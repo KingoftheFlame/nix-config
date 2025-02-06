@@ -17,6 +17,7 @@
       ./hardware-configuration.nix
       outputs.nixosModules.garbage
       outputs.nixosModules.ld-fix     
+      outputs.nixosModules.virtualization
       inputs.home-manager.nixosModules.home-manager	
     ];
 
@@ -66,13 +67,16 @@
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-  #Docker
+  # #Docker
 
-  virtualisation.docker.enable = true;
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
-  };
+  # virtualisation.docker.enable = true;
+  # virtualisation.docker.rootless = {
+  #   enable = true;
+  #   setSocketVariable = true;
+  # };
+  #
+
+  virt_members = ["host"];
   
 
   # Configure keymap in X11

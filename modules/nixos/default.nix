@@ -5,4 +5,6 @@
   # my-module = import ./my-module.nix;
   garbage = import ./garbage.nix;
   ld-fix = import ./ld-fix.nix;
+  virtualisation = import ./virtualization.nix;
+  gaming = import ./gaming.nix;
 }

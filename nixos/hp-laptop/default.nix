@@ -12,13 +12,19 @@
 }: 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    with outputs.nixosModules;[ # Include the results of the hardware scan.
+      
       ./hardware-configuration.nix
-      outputs.nixosModules.garbage
-      outputs.nixosModules.ld-fix
+      garbage
+      ld-fix
+      # outputs.nixosModules.virtualization
+      virtualisation
+      gaming
       inputs.home-manager.nixosModules.home-manager	
     ];
 
+
+  virt_members = ["matthew"];
   
   nixpkgs = {
     overlays = [
@@ -119,20 +125,6 @@
 
   users.defaultUserShell = pkgs.nushell;
 
-
-  # Install firefox.
-  # programs.firefox.enable = true;
-
-  #steam
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  };
-
-  # Allow unfree packages
-  #nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -160,12 +152,12 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  #Docker
-  virtualisation.docker.enable = true;
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
-  };
+  # #Docker
+  # virtualisation.docker.enable = true;
+  # virtualisation.docker.rootless = {
+  #   enable = true;
+  #   setSocketVariable = true;
+  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
