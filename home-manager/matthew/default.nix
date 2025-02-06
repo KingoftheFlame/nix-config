@@ -16,6 +16,7 @@
     sci-tools
     internet
     terminal
+    development
     games
     firefox
 

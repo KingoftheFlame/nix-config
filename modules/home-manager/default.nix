@@ -11,6 +11,7 @@
   neovim = import ./neovim;
 
   wsl = import ./wsl.nix;
+  development = import ./development.nix;
 
   games = import ./games.nix;
   music = import ./music.nix;
