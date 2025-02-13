@@ -3,6 +3,7 @@
   home.packages = with pkgs;[
     arduino
     arduino-cli
+    ghostwriter
 
    
   ];

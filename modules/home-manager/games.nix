@@ -3,7 +3,7 @@
     home.packages = with pkgs; [
       r2modman
       # minecraft
-      # prismlauncher
+      prismlauncher
       # flashpoint
       ryujinx
       cemu
