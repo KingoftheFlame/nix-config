@@ -12,13 +12,12 @@
   imports = with outputs.homeManagerModules;[
     # If you want to use modules your own flake exports (from modules/home-manager):    
     options
-    music
-    sci-tools
     internet
-    terminal
-    development
     games
-    firefox
+    creative
+    media
+    tools
+    science
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default

@@ -7,16 +7,24 @@
   options = import ./options.nix;
 
   #terminal
-  terminal = import ./terminal;
-  neovim = import ./neovim;
+  # terminal = import ./terminal;
+  # neovim = import ./neovim;
 
   wsl = import ./wsl.nix;
-  development = import ./development.nix;
+  # development = import ./development.nix;
 
-  games = import ./games.nix;
-  music = import ./music.nix;
-  internet = import ./internet.nix;
-  firefox = import ./firefox;
+  # music = import ./music.nix;
+  # internet = import ./internet.nix;
+  # firefox = import ./firefox;
 
-  sci-tools = import ./sci-tools.nix;
+  # sci-tools = import ./sci-tools.nix;
+  
+  games = import ./games;
+  science = import ./science;
+  media = import ./media;
+  creative = import ./creative;
+  internet = import ./internet;
+  tools = import ./tools;
+  
+  
 }

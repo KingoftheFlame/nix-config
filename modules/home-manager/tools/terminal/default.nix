@@ -25,7 +25,12 @@
   # programs.nushell.extraEnv = lib.mkIf(config.wsl.enable) programs.nushell.extraEnv + "$env.BROWSER = \'wslview\'";
   
   # home.file.".config/nushell/nu_scripts".source = outputs.nu-scripts;
-  home.packages = [pkgs.nu_scripts];
+  home.packages = with pkgs;[
+    nu_scripts
+    speedtest-rs
+    wormhole-rs
+    streamlink
+  ];
    
 
   programs.helix = {
@@ -100,9 +105,5 @@
   programs.ripgrep = {
       enable = true;
   };
-
-  # programs.speedtest-rs = {
-  #   enable = true;
-  # };
 
 }
