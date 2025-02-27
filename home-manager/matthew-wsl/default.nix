@@ -9,13 +9,21 @@
   ...
 }: {
   # You can import other home-manager modules here
-  imports = [
+  imports = with outputs.homeManager;[
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
-    outputs.homeManagerModules.terminal
-    outputs.homeManagerModules.neovim
-    outputs.homeManagerModules.sci-tools
-    outputs.homeManagerModules.wsl
+    # outputs.homeManagerModules.terminal
+    # outputs.homeManagerModules.neovim
+    # outputs.homeManagerModules.sci-tools
+    wsl
+    options
+
+    internet
+    # games
+    creative
+    # media
+    tools
+    science
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default

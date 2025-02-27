@@ -4,7 +4,5 @@
     arduino
     arduino-cli
     ghostwriter
-
-   
   ];
 }
