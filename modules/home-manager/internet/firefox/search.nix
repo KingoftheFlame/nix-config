@@ -5,7 +5,7 @@ in
 {
 
   "Nix Packages" = lib.mkIf cfg.nix-search.enable{
-  # "Nix Packages" = {
+  "Nix Packages" = {
     urls = [{
       template = "https://search.nixos.org/packages";
       params = [
@@ -29,6 +29,6 @@ in
 
     #   # icon = ""
 
-    # };
+    };
     
 }

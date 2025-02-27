@@ -1,7 +1,7 @@
 {pkgs, inputs, ...}:
 {
   imports = [
-    # ./personal.nix
+    ./main.nix
     # ./school.nix
     # ./old-personal.nix
   ];
