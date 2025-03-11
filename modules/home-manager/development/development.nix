@@ -5,6 +5,8 @@
     # arduino-cli
     arduino-ide
     kdePackages.ghostwriter
+    podman
+    podman-compose
   
   ];
 }

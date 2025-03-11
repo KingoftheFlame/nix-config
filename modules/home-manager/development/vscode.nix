@@ -4,7 +4,7 @@ let shared-extensions =
   with pkgs.vscode-extensions;[
     bbenoist.nix
   ]
-++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+  ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
   {
     name = "vscode-helix-emulation";
     publisher = "jasew";
@@ -28,7 +28,6 @@ in
       extensions = with pkgs.vscode-extensions;[
         ms-vscode.cpptools
         jdinhlife.gruvbox
-        # moozzyk.Arduino
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace[
         {
           name = "Arduino";

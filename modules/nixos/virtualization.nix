@@ -17,6 +17,9 @@
 
     virtualisation.spiceUSBRedirection.enable = true;
     
+    #podman
+    virtualisation.podman.enable = true;
+    
     #Docker
     virtualisation.docker.enable = true;
     virtualisation.docker.rootless = {
