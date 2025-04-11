@@ -28,6 +28,7 @@ in
       extensions = with pkgs.vscode-extensions;[
         ms-vscode.cpptools
         jdinhlife.gruvbox
+        rust-lang.rust-analyzer
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace[
         {
           name = "Arduino";
