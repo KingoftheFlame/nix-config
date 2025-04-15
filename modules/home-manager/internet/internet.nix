@@ -10,7 +10,7 @@
   
       google-chrome
 
-      rustdesk
+      # rustdesk
 
     ];
   # };
