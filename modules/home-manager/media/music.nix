@@ -11,6 +11,8 @@
 
     {home.packages = with pkgs; lib.mkIf config.gui.enable[
       youtube-music
+      spotify
+      
       yt-dlg
       picard
       strawberry
