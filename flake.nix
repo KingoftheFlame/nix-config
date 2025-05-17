@@ -9,6 +9,8 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
+    nixos-wsl.url = "github:nix-community/NixOs-WSL/main";
+
     # Home manager
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -17,6 +19,9 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    
+
   };
 
   outputs = {
@@ -71,6 +76,18 @@
         modules = [
           ./nixos/home-server
         ];
+      };
+
+      wsl-desktop = nixpkgs.lib.nixosSystem {
+	specialArgs ={inherit inputs outputs;};
+	modules = [
+	  ./nixos/nixos-wsl
+	  inputs.nixos-wsl.nixosModules.default
+          {
+            system.stateVersion = "24.11";
+            wsl.enable = true;
+          }
+	];
       };
     };
 
