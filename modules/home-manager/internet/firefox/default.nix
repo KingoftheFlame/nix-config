@@ -1,4 +1,4 @@
-{pkgs, inputs, ...}:
+{config,lib, pkgs, inputs, ...}:
 {
   imports = [
     ./main.nix
@@ -6,11 +6,14 @@
     # ./old-personal.nix
   ];
 
-  programs.firefox = {
-    enable = true;
-    # policies = [
+  
+  config = {
+    programs.firefox = {
+      enable = lib.mkIf config.gui.enable;
+      # policies = [
       
-    # ];   
+      # ];   
 
+    };
   };
 }

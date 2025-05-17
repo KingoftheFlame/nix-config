@@ -4,6 +4,7 @@
     gui.enable = mkEnableOption "Enable GUI applications";
     games.enable = mkEnableOption "Enable Games on PC";    
     school.enable = mkEnableOption "Enable School Account";
+    is-wsl = mkEnableOption "The system is a wsl system";
 
     search = {
       google.enable = mkEnableOption "enable google as a search engine in firefox";

@@ -12,7 +12,6 @@
   imports = with outputs.homeManagerModules;[
     # If you want to use modules your own flake exports (from modules/home-manager):    
     options
-    internet
     development
     tools
     science
