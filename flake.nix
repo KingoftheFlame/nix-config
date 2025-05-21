@@ -86,6 +86,8 @@
           {
             system.stateVersion = "24.11";
             wsl.enable = true;
+      	    wsl.defaultUser = "matthew";
+            wsl.interop.register = true;
           }
 	];
       };

@@ -106,6 +106,7 @@
     #  thunderbird
     ];
     shell = pkgs.nushell;
+    initialPassword = "pas123";
   };
 
   users.defaultUserShell = pkgs.nushell;
