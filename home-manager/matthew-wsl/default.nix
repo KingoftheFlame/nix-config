@@ -85,6 +85,8 @@
     nixd
     nixpkgs-fmt
 
+    wslu
+
   ];
 
 
