@@ -27,6 +27,7 @@
 
   gui.enable = false;
   games.enable = false;
+  is-wsl = true;
 
   nixpkgs = {
     # You can add overlays here
@@ -84,6 +85,8 @@
 
     nixd
     nixpkgs-fmt
+
+    wslu
 
   ];
 
