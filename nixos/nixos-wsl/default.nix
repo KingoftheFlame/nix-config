@@ -16,7 +16,7 @@
       
       # ./hardware-configuration.nix
       # garbage
-      # ld-fix
+      ld-fix
       # outputs.nixosModules.virtualization
       virtualisation
       # gaming
@@ -115,7 +115,15 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     nushell
+    wget
   ];
+
+  #allow generic executables
+  programs.nix-ld = {
+    enable = true;
+    package = pkgs.nix-ld-rs; # only for NixOS 24.05
+  };
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -136,12 +144,6 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # #Docker
-  # virtualisation.docker.enable = true;
-  # virtualisation.docker.rootless = {
-  #   enable = true;
-  #   setSocketVariable = true;
-  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

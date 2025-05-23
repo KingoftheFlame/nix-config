@@ -2,6 +2,10 @@ $env.config = {
   show_banner: false,
 }
 
+#aliases
+alias ls = eza
+
+
 #source cargo_search.nu
 # const scripts_path = "./.config"
 # source $scripts_path + "/custom-completions/bat-completions.nu"

@@ -1,109 +1,130 @@
 { config, pkgs, lib, inputs, outputs,  ... }:
 {
 
+  config = {
+    programs.nushell = lib.mkMerge [
+      {
+        enable = true;
 
-  programs.nushell = let envStrs = []; in{
-    enable = true;
+        shellAliases = {
+          vi = "nvim";
+          vim = "nvim";
+        };
 
-    shellAliases = {
-      vi = "nvim";
-      vim = "nvim";
-    };
+        envFile.source = ./env.nu;
+        configFile.source = ./config.nu;
 
-    envFile.source = ./env.nu;
-    configFile.source = ./config.nu;
+        extraEnv = ''
+          $env.scripts_path = '${pkgs.nu_scripts}/share/nu_scripts'
+        '';
 
-    extraEnv = ''
-      $env.scripts_path = '${pkgs.nu_scripts}/share/nu_scripts'
-    '';
+        extraConfig = ''
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/bat/bat-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/adb/adb-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/cargo/cargo-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/git/git-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/gh/gh-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/nix/nix-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/rustup/rustup-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/scoop/scoop-completions.nu
+
+        '';
+      }
+
+      {
+          extraEnv = lib.mkIf(config.is-wsl) "$env.BROWSER = \'wslview\'";
+      }
+
+    ];
 
 
-  };
+    #WSL
+    # programs.nushell.extraEnv = lib.mkIf(config.wsl.enable) programs.nushell.extraEnv + "$env.BROWSER = \'wslview\'";
+    
+    # home.file.".config/nushell/nu_scripts".source = outputs.nu-scripts;
+    home.packages = with pkgs;[
+      nu_scripts
 
+      speedtest-rs
+      hyperfine
 
-  #WSL
-  # programs.nushell.extraEnv = lib.mkIf(config.wsl.enable) programs.nushell.extraEnv + "$env.BROWSER = \'wslview\'";
-  
-  # home.file.".config/nushell/nu_scripts".source = outputs.nu-scripts;
-  home.packages = with pkgs;[
-    nu_scripts
-    speedtest-rs
-    wormhole-rs
-    streamlink
-  ];
-   
+      wormhole-rs
+      streamlink
 
-  programs.helix = {
-    enable = true;
-    languages = {
-      nix = {formatter = "nixpkgs-fmt";};
-    };
-  };
+      #replacements
+      bottom
+      bat
+      ripgrep
+      fd
+      eza
+      #zoxide
 
-  programs.starship = {
-    enable = true;
-    enableNushellIntegration = true;
-    settings = {
-      format = "$all$directory$character";
-    };
-  };
+      xh
+      gitui
+      du-dust
 
-  programs.gh = {
-    enable = true;
-    settings = {
-      git_protocol = "https";
-      editor = "hx";
-      aliases = {
-        co = "pr checkout";
-      };
-    };
-    extensions = [pkgs.gh-dash];
-  };
+      yazi
 
-  programs.gh-dash = {
-    enable = true;
-  };
+    ];
+    
 
-  programs.git = {
-    enable = true;
-    userName = "kingoftheflame";
-    userEmail = "matthew.l.mcclure186@gmail.com";
-  };
-   
-  programs.zellij = {
-    enable = true;
-  };
-
-  programs.hyfetch ={
-    enable = true;
-    settings = {
-      "preset" = "gay-men";
-      "mode" = "rgb";
-      "light_dark" = "dark";
-      "lightness" = 0.5;
-      "color_align" = {
-          "mode" = "horizontal";
-          "custom_colors" = [];
-          "fore_back" = null;
-      };
-      "backend" = "neofetch";
-     };
-  };
-
-  programs.bottom = {
-    enable = true;
-    settings = {
-      #fill out when I give a shit
-    };
-  };
-
-  programs.bat = {
-    enable = true;
-    #add configuration when you care
-  };
-
-  programs.ripgrep = {
+    programs.helix = {
       enable = true;
+      languages = {
+        nix = {formatter = "nixpkgs-fmt";};
+      };
+    };
+
+    programs.starship = {
+      enable = true;
+      enableNushellIntegration = true;
+      settings = {
+        format = "$all$directory$character";
+      };
+    };
+
+    programs.gh = {
+      enable = true;
+      settings = {
+        git_protocol = "https";
+        editor = "hx";
+        aliases = {
+          co = "pr checkout";
+        };
+      };
+      extensions = [pkgs.gh-dash];
+    };
+
+    # programs.gh-dash = {
+    #   enable = true;
+    # };
+
+    programs.git = {
+      enable = true;
+      userName = "kingoftheflame";
+      userEmail = "matthew.l.mcclure186@gmail.com";
+    };
+    
+    programs.zellij = {
+      enable = true;
+    };
+
+    programs.hyfetch ={
+      enable = true;
+      settings = {
+        "preset" = "gay-men";
+        "mode" = "rgb";
+        "light_dark" = "dark";
+        "lightness" = 0.5;
+        "color_align" = {
+            "mode" = "horizontal";
+            "custom_colors" = [];
+            "fore_back" = null;
+        };
+        "backend" = "neofetch";
+      };
+    };
+  
   };
 
 }
