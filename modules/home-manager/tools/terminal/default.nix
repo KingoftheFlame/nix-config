@@ -19,20 +19,33 @@
         '';
 
         extraConfig = ''
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/bat/bat-completions.nu
           source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/adb/adb-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/bat/bat-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/btm/btm-completions.nu         
           source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/cargo/cargo-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/curl/curl-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/docker/docker-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/eza/eza-completions.nu
           source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/git/git-completions.nu
           source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/gh/gh-completions.nu
           source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/nix/nix-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/npm/npm-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/pnpm/pnpm-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/rg/rg-completions.nu
           source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/rustup/rustup-completions.nu
           source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/scoop/scoop-completions.nu
-
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/tar/tar-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/vscode/vscode-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/zellij/zellij-completions.nu
+          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/zoxide/zoxide-completions.nu
         '';
       }
 
       {
-          extraEnv = lib.mkIf(config.is-wsl) "$env.BROWSER = \'wslview\'";
+          extraEnv = lib.mkIf(config.is-wsl) "
+            $env.BROWSER = \'wslview\'
+            alias code = code.exe
+          ";
       }
 
     ];
