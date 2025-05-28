@@ -9,10 +9,10 @@
   };
 
   hardware.steam-hardware.enable = true;
-  hardware.xone.enable = true;
+  # hardware.xone.enable = true;
   environment.systemPackages = with pkgs;[
     # linuxKernel.packages.linux_zen.xone
-    linuxKernel.packages.linux_zen.xpadneo
+    # linuxKernel.packages.linux_zen.xpadneo
   ];
 
   # environment.systemPackages = with pkgs;[

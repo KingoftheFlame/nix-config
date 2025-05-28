@@ -72,19 +72,19 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
-  hardware.xpadneo.enable = true;
+  # hardware.xpadneo.enable = true;
 
-  services.blueman.enable = true; # Optional: for a GUI to manage BT
+  # services.blueman.enable = true; # Optional: for a GUI to manage BT
 
   # Required kernel modules
-  boot.kernelModules = [ "xpad" "hid_xpadneo" ]; # See note below
+  # boot.kernelModules = [ "xpad" "hid_xpadneo" ]; # See note below
 
 
   services.udev.packages = with pkgs; [ steamPackages.steam ];
 
-  boot.extraModulePackages = with config.boot.kernelPackages; [
-    xpadneo
-  ];
+  # boot.extraModulePackages = with config.boot.kernelPackages; [
+  #   xpadneo
+  # ];
 
   boot.kernelParams = [ "bluetooth.disable_ertm=1" ];
 

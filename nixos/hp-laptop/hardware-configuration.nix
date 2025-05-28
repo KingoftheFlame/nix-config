@@ -10,14 +10,13 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "vmd" "nvme" "usb_storage" "usbhid" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" "hid_xpadneo"];
+  boot.kernelModules = [ "kvm-intel" ];
   # boot.extraModulePackages = [ ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [ "acpi_backlight=video" "resume_offset=16164864"];
 
 
-  boot.extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
-  # boot.kernelModules = [ "hid_xpadneo" ];
+  # boot.extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
 
   boot.resumeDevice = "/dev/disk/by-uuid/107bdbbb-e7c7-4ce1-9b07-1d3a463bb7d5";
   powerManagement.enable = true;  

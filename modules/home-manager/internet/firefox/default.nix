@@ -9,7 +9,7 @@
   
   config = {
     programs.firefox = {
-      enable = lib.mkIf config.gui.enable;
+      enable = config.gui.enable;
       # policies = [
       
       # ];   
