@@ -73,12 +73,6 @@
   home.packages = with pkgs; [
     openssh
 
-    gcc
-    #pnpm
-    #python3
-    rustup
-    lldb
-
     #gui
     google-chrome
     # steam

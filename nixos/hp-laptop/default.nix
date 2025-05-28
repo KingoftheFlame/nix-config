@@ -60,6 +60,36 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+
+
+  hardware.bluetooth.settings = {
+    General = {
+      Enable = "true";
+      FastConnectable = "true";
+    };
+  };
+
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
+  hardware.xpadneo.enable = true;
+
+  services.blueman.enable = true; # Optional: for a GUI to manage BT
+
+  # Required kernel modules
+  boot.kernelModules = [ "xpad" "hid_xpadneo" ]; # See note below
+
+
+  services.udev.packages = with pkgs; [ steamPackages.steam ];
+
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    xpadneo
+  ];
+
+  boot.kernelParams = [ "bluetooth.disable_ertm=1" ];
+
+  
+
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
@@ -135,7 +165,7 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
     nushell
-    rustdesk
+    # rustdesk
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

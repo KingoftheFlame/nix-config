@@ -9,6 +9,11 @@
     kdePackages.ghostwriter
     podman
     podman-compose
+
+
+    #c++
+    gcc
+    gdb
   
   ];
 }
