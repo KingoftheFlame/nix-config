@@ -7,6 +7,7 @@
   config = lib.mkMerge[
     {home.packages = with pkgs; [
       yt-dlp
+      ncspot
     ];}
 
     {home.packages = with pkgs; lib.mkIf config.gui.enable[

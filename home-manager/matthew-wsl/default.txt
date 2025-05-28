@@ -9,25 +9,26 @@
   ...
 }: {
   # You can import other home-manager modules here
-  imports = with outputs.homeManagerModules;[
-    # If you want to use modules your own flake exports (from modules/home-manager):    
+  imports = with outputs.homeManager;[
+    # If you want to use modules your own flake exports (from modules/home-manager):
+    # outputs.homeManagerModules.example
+    # outputs.homeManagerModules.terminal
+    # outputs.homeManagerModules.neovim
+    # outputs.homeManagerModules.sci-tools
+    wsl
     options
-    development
+
+    internet
+    # games
+    creative
+    # media
     tools
     science
-    wsl
-    media
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
-    
-    #import extra config in other files
-    # ./nvim.nix
   ];
 
-  gui.enable = false;
-  games.enable = false;
-  is-wsl = true;
 
   nixpkgs = {
     # You can add overlays here
@@ -54,9 +55,18 @@
     };
   };
 
+  
   nix = {
     package = pkgs.nix;
     settings.experimental-features = [ "nix-command" "flakes" ];
+
+    #auto garbage collect
+    gc = {
+      automatic = true;
+      frequency = "daily";
+      options = "--delete-older-than 10d";
+    };
+
   };
 
   home = {
@@ -73,24 +83,25 @@
     openssh
 
     gcc
-    #pnpm
+    pnpm
     #python3
+    rustup
     lldb
-
-    #gui
-    # steam
-
     
     #helix
 
+    lua-language-server
     nixd
     nixpkgs-fmt
 
+    android-studio
+
+    #strawberry
+
+    cloudflared
     wslu
 
   ];
-
-
 
   # Enable home-manager 
   programs.home-manager.enable = true;
