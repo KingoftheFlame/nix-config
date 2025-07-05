@@ -30,6 +30,7 @@ in
           ms-vscode.cpptools
           jdinhlife.gruvbox
           rust-lang.rust-analyzer
+          mhutchie.git-graph
         ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace[
           {
             name = "Arduino";
