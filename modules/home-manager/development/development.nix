@@ -5,6 +5,8 @@
     # arduino-cli
     arduino-ide
     rpi-imager
+    kicad
+    
     gtk2
     kdePackages.ghostwriter
     podman

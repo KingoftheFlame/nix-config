@@ -80,7 +80,7 @@
   # boot.kernelModules = [ "xpad" "hid_xpadneo" ]; # See note below
 
 
-  services.udev.packages = with pkgs; [ steamPackages.steam ];
+  services.udev.packages = with pkgs; [ steam-unwrapped ];
 
   # boot.extraModulePackages = with config.boot.kernelPackages; [
   #   xpadneo

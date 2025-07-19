@@ -16,7 +16,7 @@
       
       yt-dlg
       picard
-      strawberry
+      # strawberry
       audacious
       lollypop
       # amarok
