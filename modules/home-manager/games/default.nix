@@ -5,7 +5,7 @@
       # minecraft
       prismlauncher
       # flashpoint
-      ryujinx
+      ryubing #ryujinx
       cemu
       # wii u usb helper
     ];

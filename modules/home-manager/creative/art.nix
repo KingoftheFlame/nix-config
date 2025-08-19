@@ -1,6 +1,6 @@
-{pkgs, config}:
+{pkgs, config,...}:
 {
-  packages = with pkgs;[
+  home.packages = with pkgs;[
     krita
     gimp
     blender
