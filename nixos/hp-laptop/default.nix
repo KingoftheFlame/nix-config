@@ -21,6 +21,7 @@
       virtualisation
       gaming
       inputs.home-manager.nixosModules.home-manager	
+      # Hyprland
     ];
 
 
@@ -113,6 +114,7 @@
 
   # Enable the Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.cinnamon.enable = true; #alright
   # services.xserver.desktopManager.xfce.enable = true; #good top bar, macos bottom panel
   # services.xserver.desktopManager.mate.enable = true; #windows xp ah dm
@@ -165,6 +167,7 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
     nushell
+    gtk3
     # rustdesk
   ];
 

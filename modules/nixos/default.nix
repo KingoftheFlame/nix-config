@@ -7,4 +7,5 @@
   ld-fix = import ./ld-fix.nix;
   virtualisation = import ./virtualization.nix;
   gaming = import ./gaming.nix;
+  Hyprland = import ./Hyprland;
 }

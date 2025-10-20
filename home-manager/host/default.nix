@@ -14,6 +14,7 @@
     # outputs.homeManagerModules.example
     outputs.homeManagerModules.terminal
     outputs.homeManagerModules.helix
+    outputs.homeManagerModules.Hyprland
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default

@@ -20,6 +20,8 @@
     tools
     science
 
+    # Hyprland
+
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
     
@@ -76,6 +78,10 @@
     #gui
     google-chrome
     # steam
+    rustdesk
+    protonvpn-gui
+
+    kdePackages.ark
 
     
     #helix
@@ -83,6 +89,7 @@
     nixd
     nixpkgs-fmt
 
+    klayout
   ];
 
 

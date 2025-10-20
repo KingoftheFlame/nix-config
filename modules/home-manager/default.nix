@@ -27,5 +27,7 @@
   internet = import ./internet;
   tools = import ./tools;
   
+
+  Hyprland = import ./Hyprland;
   
 }

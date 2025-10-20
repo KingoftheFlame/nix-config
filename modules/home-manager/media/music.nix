@@ -26,6 +26,8 @@
 
       #music production
       ardour
+      audacity
+      
     ];}
   ];
 }
