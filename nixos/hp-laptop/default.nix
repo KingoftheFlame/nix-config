@@ -20,6 +20,7 @@
       # outputs.nixosModules.virtualization
       virtualisation
       gaming
+      udev
       inputs.home-manager.nixosModules.home-manager	
       # Hyprland
     ];

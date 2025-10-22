@@ -8,4 +8,5 @@
   virtualisation = import ./virtualization.nix;
   gaming = import ./gaming.nix;
   Hyprland = import ./Hyprland;
+  udev = import ./udev.nix;
 }
