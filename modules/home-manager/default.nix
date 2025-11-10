@@ -3,7 +3,7 @@
 {
 
 
-  development = import ./development;
+  vscode = import ./vscode.nix;
   tools = import ./tools;
   
   Hyprland = import ./Hyprland;

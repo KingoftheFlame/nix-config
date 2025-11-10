@@ -9,7 +9,6 @@
   ...
 }: {
   imports = with outputs.homeManagerModules;[
-    development
     tools
 
     
@@ -62,8 +61,15 @@
 
     numbat
 
+  #development
     gcc
+    gd
     lldb
+
+    gtk2
+    podman
+    podman-compose
+
 
     #music tools
     yt-dlp

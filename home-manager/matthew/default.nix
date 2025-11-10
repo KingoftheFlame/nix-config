@@ -10,8 +10,8 @@
 }: {
   
   imports = with outputs.homeManagerModules;[
-    development
     tools
+    vscode
 
     # Hyprland
     
@@ -70,6 +70,24 @@
     numbat
   
 
+  #development
+    arduino-ide
+    teensy-loader-cli
+    teensy-udev-rules
+
+    # rpi-imager
+    kicad
+    
+    gtk2    #fix for some program
+    podman
+    podman-compose
+
+    gcc
+    gd
+
+    klayout
+
+
 
   #internet
     firefox-devedition
@@ -88,7 +106,9 @@
     
     #office
     libreoffice
-    obsidian
+    obsidian    
+    kdePackages.ghostwriter
+
 
     #music production
     ardour
@@ -126,7 +146,8 @@
     nixd
     nixpkgs-fmt
 
-    klayout
+
+    
   ];
 
 
