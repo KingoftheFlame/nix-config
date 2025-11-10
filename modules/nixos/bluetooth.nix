@@ -16,13 +16,5 @@
     };
   };
   services.blueman.enable = true;
-  hardware.xpadneo.enable = true; # Enable the xpadneo driver for Xbox One wireless controllers
 
-  boot = {
-    extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
-    extraModprobeConfig = ''
-      options bluetooth disable_ertm=Y
-    '';
-    # connect xbox controller
-  };
 }

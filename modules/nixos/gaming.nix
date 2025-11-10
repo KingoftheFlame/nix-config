@@ -1,6 +1,8 @@
 {pkgs, config, lib, ...}:
 {
   
+  services.udev.packages = with pkgs; [ steam-unwrapped ];
+
   #steam
   programs.steam = {
     enable = true;
@@ -9,14 +11,18 @@
   };
 
   hardware.steam-hardware.enable = true;
-  # hardware.xone.enable = true;
-  environment.systemPackages = with pkgs;[
-    # linuxKernel.packages.linux_zen.xone
-    # linuxKernel.packages.linux_zen.xpadneo
-  ];
 
-  # environment.systemPackages = with pkgs;[
-  #   xboxdrv
-  # ];
-  boot.extraModprobeConfig = '' options bluetooth disable_ertm=1 '';
+
+
+  #Fix for xbox controller
+  hardware.xpadneo.enable = true; # Enable the xpadneo driver for Xbox One wireless controllers
+
+  boot = {
+    extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
+    extraModprobeConfig = ''
+      options bluetooth disable_ertm=Y
+    '';
+    # connect xbox controller
+  };
+
 }

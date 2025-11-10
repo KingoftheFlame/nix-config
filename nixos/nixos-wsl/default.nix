@@ -15,11 +15,8 @@
     with outputs.nixosModules;[ # Include the results of the hardware scan.
       
       # ./hardware-configuration.nix
-      # garbage
       ld-fix
-      # outputs.nixosModules.virtualization
       virtualisation
-      # gaming
       inputs.home-manager.nixosModules.home-manager	
     ];
 

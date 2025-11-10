@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 {
   inputs,
   outputs,
@@ -17,7 +13,6 @@
       ./hardware-configuration.nix
       garbage
       ld-fix
-      # outputs.nixosModules.virtualization
       virtualisation
       gaming
       udev
@@ -26,9 +21,11 @@
       # Hyprland
     ];
 
-
+  #options for imported modules
   virt_members = ["matthew"];
   
+
+  #package manager configuretion
   nixpkgs = {
     overlays = [
       outputs.overlays.additions
@@ -43,7 +40,12 @@
     };
 
   nix.settings.experimental-features = "nix-command flakes";
-      
+   
+  #enable app image programs
+  programs.appimage.enable = true;
+  programs.appimage.binfmt = true;
+     
+  
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -54,44 +56,11 @@
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   networking.hostName = "nix-laptop"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-
-
-  # hardware.bluetooth.settings = {
-  #   General = {
-  #     Enable = "true";
-  #     FastConnectable = "true";
-  #   };
-  # };
-
-  # hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-
-  # hardware.xpadneo.enable = true;
-
-  # services.blueman.enable = true; # Optional: for a GUI to manage BT
-
-  # Required kernel modules
-  # boot.kernelModules = [ "xpad" "hid_xpadneo" ]; # See note below
-
-
-  services.udev.packages = with pkgs; [ steam-unwrapped ];
-
-  # boot.extraModulePackages = with config.boot.kernelPackages; [
-  #   xpadneo
-  # ];
-
-  # boot.kernelParams = [ "bluetooth.disable_ertm=1" ];
-
-  
+ 
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
@@ -111,8 +80,13 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+
+  # Configure keymap in X11
+  services.xserver = {
+    enable = true;
+    xkb.layout = "us";
+    xkb.variant = "";
+  };
 
   # Enable the Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
@@ -122,11 +96,7 @@
   # services.xserver.desktopManager.mate.enable = true; #windows xp ah dm
   services.xserver.desktopManager.budgie.enable = true; #cinnamon but better
 
-  # Configure keymap in X11
-  services.xserver = {
-    xkb.layout = "us";
-    xkb.variant = "";
-  };
+  
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -163,41 +133,13 @@
 
   users.defaultUserShell = pkgs.nushell;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
     nushell
     gtk3
-    # rustdesk
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
-  # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # #Docker
-  # virtualisation.docker.enable = true;
-  # virtualisation.docker.rootless = {
-  #   enable = true;
-  #   setSocketVariable = true;
-  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

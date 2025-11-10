@@ -4,7 +4,7 @@
     # arduino
     # arduino-cli
     arduino-ide
-    rpi-imager
+    # rpi-imager
     kicad
     
     gtk2

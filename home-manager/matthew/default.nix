@@ -8,29 +8,15 @@
   pkgs,
   ...
 }: {
-  # You can import other home-manager modules here
+  
   imports = with outputs.homeManagerModules;[
-    # If you want to use modules your own flake exports (from modules/home-manager):    
-    options
-    internet
-    games
-    creative
     development
-    media
     tools
-    science
 
     # Hyprland
-
-    # Or modules exported from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModules.default
     
-    #import extra config in other files
-    # ./nvim.nix
   ];
 
-  gui.enable = true;
-  games.enable = true;
 
   nixpkgs = {
     # You can add overlays here
@@ -73,19 +59,70 @@
   # home.packages = with pkgs; [ steam ];
 
   home.packages = with pkgs; [
+
+  #terminal
     openssh
 
-    #gui
-    google-chrome
-    # steam
+
+  #utilities
     rustdesk
+    kdePackages.ark
+    numbat
+  
+
+
+  #internet
+    firefox-devedition
+    google-chrome
+    discord
+
     protonvpn-gui
 
-    kdePackages.ark
+
+
+  #creative software
+    #graphics
+    krita
+    gimp
+    blender
+    
+    #office
+    libreoffice
+    obsidian
+
+    #music production
+    ardour
+    audacity
+
+
+
+    #gameing
+    r2modman      #lethal + etc mod manager
+    prismlauncher #minecraft mod launcher
+    ryubing       #switch emulator
+    cemu          #wii emulator
+
+
+  #music
+    #gui clients
+    spotify
+    youtube-music
+    vlc
+
+    #gui managers
+    yt-dlg
+    picard
+
+    #cli
+    yt-dlp
+    ncspot
+
+  
+
+    #find section!!
+
 
     
-    #helix
-
     nixd
     nixpkgs-fmt
 

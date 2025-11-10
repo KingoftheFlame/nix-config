@@ -40,14 +40,6 @@
           source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/zoxide/zoxide-completions.nu
         '';
       }
-
-      {
-          extraEnv = lib.mkIf(config.is-wsl) "
-            $env.BROWSER = \'wslview\'
-            alias code = code.exe
-          ";
-      }
-
     ];
 
 
@@ -114,8 +106,8 @@
 
     programs.git = {
       enable = true;
-      userName = "kingoftheflame";
-      userEmail = "matthew.l.mcclure186@gmail.com";
+      settings.user.name = "kingoftheflame";
+      settings.user.email = "matthew.l.mcclure186@gmail.com";
     };
     
     programs.zellij = {

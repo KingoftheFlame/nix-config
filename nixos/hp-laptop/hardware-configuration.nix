@@ -15,6 +15,8 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [ "acpi_backlight=video" "resume_offset=16164864"];
 
+  
+
 
   # boot.extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
 

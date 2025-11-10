@@ -8,26 +8,13 @@
   pkgs,
   ...
 }: {
-  # You can import other home-manager modules here
   imports = with outputs.homeManagerModules;[
-    # If you want to use modules your own flake exports (from modules/home-manager):    
-    options
     development
     tools
-    science
-    wsl
-    media
 
-    # Or modules exported from other flakes (such as nix-colors):
-    # inputs.nix-colors.homeManagerModules.default
     
-    #import extra config in other files
-    # ./nvim.nix
   ];
 
-  gui.enable = false;
-  games.enable = false;
-  is-wsl = true;
 
   nixpkgs = {
     # You can add overlays here
@@ -59,6 +46,7 @@
     settings.experimental-features = [ "nix-command" "flakes" ];
   };
 
+
   home = {
     username = "matthew";
     homeDirectory = "/home/matthew";
@@ -72,24 +60,32 @@
   home.packages = with pkgs; [
     openssh
 
+    numbat
+
     gcc
-    #pnpm
-    #python3
     lldb
 
-    #gui
-    # steam
-
+    #music tools
+    yt-dlp
+    ncspot
     
-    #helix
 
     nixd
     nixpkgs-fmt
 
+    #wsl web browser connection
     wslu
 
   ];
 
+
+
+  #WSL specific
+  programs.nushell.extraEnv = "
+    $env.BROWSER = \'wslview\'
+    alias code code.exe
+  ";
+  programs.nushell
 
 
   # Enable home-manager 
