@@ -9,4 +9,5 @@
   gaming = import ./gaming.nix;
   Hyprland = import ./Hyprland;
   udev = import ./udev.nix;
+  bluetooth = import ./bluetooth.nix;
 }

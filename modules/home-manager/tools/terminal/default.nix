@@ -74,7 +74,7 @@
 
       xh
       gitui
-      du-dust
+      dust
 
       yazi
 

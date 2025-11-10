@@ -21,6 +21,7 @@
       virtualisation
       gaming
       udev
+      bluetooth
       inputs.home-manager.nixosModules.home-manager	
       # Hyprland
     ];
@@ -64,14 +65,14 @@
 
 
 
-  hardware.bluetooth.settings = {
-    General = {
-      Enable = "true";
-      FastConnectable = "true";
-    };
-  };
+  # hardware.bluetooth.settings = {
+  #   General = {
+  #     Enable = "true";
+  #     FastConnectable = "true";
+  #   };
+  # };
 
-  hardware.bluetooth.enable = true;
+  # hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
   # hardware.xpadneo.enable = true;
@@ -88,7 +89,7 @@
   #   xpadneo
   # ];
 
-  boot.kernelParams = [ "bluetooth.disable_ertm=1" ];
+  # boot.kernelParams = [ "bluetooth.disable_ertm=1" ];
 
   
 
