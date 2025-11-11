@@ -11,12 +11,12 @@
     with outputs.nixosModules;[ # Include the results of the hardware scan.
       
       ./hardware-configuration.nix
-      garbage
-      ld-fix
+
+      system
       virtualisation
       gaming
-      udev
       bluetooth
+      
       inputs.home-manager.nixosModules.home-manager	
       # Hyprland
     ];

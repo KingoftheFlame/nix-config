@@ -15,7 +15,7 @@
     with outputs.nixosModules;[ # Include the results of the hardware scan.
       
       # ./hardware-configuration.nix
-      ld-fix
+      system
       virtualisation
       inputs.home-manager.nixosModules.home-manager	
     ];

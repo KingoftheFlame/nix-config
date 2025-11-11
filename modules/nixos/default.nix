@@ -3,11 +3,9 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
-  garbage = import ./garbage.nix;
-  ld-fix = import ./compilation.nix;
+  system = import ./system.nix;
   virtualisation = import ./virtualization.nix;
   gaming = import ./gaming.nix;
   Hyprland = import ./Hyprland;
-  udev = import ./udev.nix;
   bluetooth = import ./bluetooth.nix;
 }
