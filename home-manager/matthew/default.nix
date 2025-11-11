@@ -13,7 +13,7 @@
     tools
     vscode
 
-    # Hyprland
+    Hyprland
     
   ];
 
