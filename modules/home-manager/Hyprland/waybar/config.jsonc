@@ -41,22 +41,22 @@
   "cpu": {
     "format": "{usage}% ",
     "tooltip": true,
-    "tooltip-format": "Uso de CPU: {usage}%\nNúcleos: {cores}"
+    "tooltip-format": "CPU Usage: {usage}%\nCores: {cores}"
   },
   "memory": {
     "format": "{}% 󰍛",
     "tooltip": true,
-    "tooltip-format": "RAM en uso: {used} / {total} ({percentage}%)"
+    "tooltip-format": "RAM: {used} / {total} ({percentage}%)"
   },
   "disk": {
     "format": "{percentage_free}% ",
     "tooltip": true,
-    "tooltip-format": "Espacio libre: {free} / {total} ({percentage_free}%)"
+    "tooltip-format": "Free: {free} / {total} ({percentage_free}%)"
   },
   "temperature": {
     "format": "{temperatureC}°C {icon}",
     "tooltip": true,
-    "tooltip-format": "Temperatura actual: {temperatureC}°C\nCrítico si > 80°C",
+    "tooltip-format": "Temp: {temperatureC}°C\nCrítico si > 80°C",
     "format-icons": [
       ""
     ]
@@ -100,7 +100,7 @@
   },
   "pulseaudio": {
     "format": "{volume}% {icon}",
-    "format-muted": " {format_source}",
+    "format-muted": "   0%",
     "format-icons": {
       "default": [
         "",
@@ -117,10 +117,10 @@
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50
   },
-  "hyprland/language": {
-    "format": "{} ",
-    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
-    "format-es": "ESP",
-    "format-en": "ENG"
-  }
+  // "hyprland/language": {
+    // "format": "{} ",
+    // "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+    // "format-es": "ESP",
+    // "format-en": "ENG"
+  // }
 }

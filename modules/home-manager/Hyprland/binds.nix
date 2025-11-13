@@ -1,28 +1,5 @@
 {pkgs, lib, ...}:
 {
-    imports =
-    [
-        ./theme.nix
-        ./waybar.nix
-        ./rofi
-    ];
-
-    home.packages = with pkgs; [
-        kitty
-        hyprpolkitagent
-
-        qt5.qtwayland
-        qt6.qtwayland
-    
-        nerd-fonts.ubuntu
-
-
-        rofi
-        # (nerd-fonts.override { fonts = ["FiraCode" "DroidSansMono" "noto-fonts"];})
-    ];
-
-    wayland.windowManager.hyprland.enable = true;
-
     wayland.windowManager.hyprland.settings = {        
         "$mainMod" = "mod4";
         bind = [
@@ -38,7 +15,7 @@
             #enable special function keys
             ",XF86AudioRaiseVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
             ",XF86AudioLowerVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-            " ,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+            ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
             ",XF86AudioPlay, exec, playerctl play-pause"
             ",XF86AudioPause, exec, playerctl play-pause"
             ",XF86AudioNext, exec, playerctl next"
@@ -47,13 +24,12 @@
             ",XF86MonBrightnessUp,exec,brightnessctl set +5%"
 
         ];
-        
-       exec-once = [
-        "waybar"
-        "systemctl --user start hyprpolkitagent"
-       ]; 
-    };
 
-    fonts.fontconfig.enable = true;
-    
+        bindm = [
+            "$modifier, mouse:272, movewindow"
+            "$modifier, mouse:273, resizewindow"
+        ];
+
+
+    };
 }
