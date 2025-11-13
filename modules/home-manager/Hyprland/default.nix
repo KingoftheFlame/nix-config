@@ -1,5 +1,10 @@
 {pkgs, lib, ...}:
 {
+    imports =
+    [
+        ./theme.nix
+        ./waybar.nix
+    ];
 
     home.packages = with pkgs; [
         kitty
@@ -16,13 +21,14 @@
 
     wayland.windowManager.hyprland.settings = {        
         "$mainMod" = "mod4";
-        bind = ["$mainMod, q, exec, kitty"];
+        bind = [
+            #open terminal
+            "$mainMod, q, exec, kitty"
+        ];
         
        exec-once = [
-        "[workspace 1 silent] kitty"
-        "[workspace 2 silent] firefox-devedition"
+        "waybar"
         "systemctl --user start hyprpolkitagent"
-        
        ]; 
     };
 

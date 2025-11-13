@@ -82,26 +82,27 @@
 
 
   # Configure keymap in X11
-  # services.xserver = {
-  #   enable = true;
-  #   xkb.layout = "us";
-  #   xkb.variant = "";
-  # };
+  services.xserver = {
+    enable = true;
+    xkb.layout = "us";
+    xkb.variant = "";
+  };
 
   # Enable the Desktop Environment.
-  # services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable  = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.wayland.enable  = true;
   
   # services.xserver.desktopManager.cinnamon.enable = true; #alright
   # services.xserver.desktopManager.xfce.enable = true; #good top bar, macos bottom panel
   # services.xserver.desktopManager.mate.enable = true; #windows xp ah dm
-  # services.xserver.desktopManager.budgie.enable = true; #cinnamon but better
+  services.xserver.desktopManager.budgie.enable = true; #cinnamon but better
 
 
   #enable homemanager
   programs.hyprland.enable = true;
   programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   
 
   # Enable CUPS to print documents.
