@@ -146,6 +146,9 @@
   ];
 
 
+  services.tailscale.enable = true;
+  services.tailscale.useRoutingFeatures = "client";
+  
 
 
   # This value determines the NixOS release from which the default
