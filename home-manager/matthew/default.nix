@@ -14,6 +14,7 @@
     vscode
 
     Hyprland
+    # ui
     
   ];
 
