@@ -2,45 +2,68 @@
 {
 
   config = {
-    programs.nushell = lib.mkMerge [
-      {
-        enable = true;
+    # programs.nushell = lib.mkMerge [
+    #   {
+    #     enable = true;
 
-        shellAliases = {
-          vi = "nvim";
-          vim = "nvim";
-        };
+    #     shellAliases = {
+    #       vi = "nvim";
+    #       vim = "nvim";
+    #     };
 
-        envFile.source = ./env.nu;
-        configFile.source = ./config.nu;
+    #     envFile.source = ./env.nu;
+    #     configFile.source = ./config.nu;
 
-        extraEnv = ''
-          $env.scripts_path = '${pkgs.nu_scripts}/share/nu_scripts'
-        '';
+    #     extraEnv = ''
+    #       $env.scripts_path = '${pkgs.nu_scripts}/share/nu_scripts'
+    #     '';
 
-        extraConfig = ''
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/adb/adb-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/bat/bat-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/btm/btm-completions.nu         
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/cargo/cargo-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/curl/curl-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/docker/docker-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/eza/eza-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/git/git-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/gh/gh-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/nix/nix-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/npm/npm-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/pnpm/pnpm-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/rg/rg-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/rustup/rustup-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/scoop/scoop-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/tar/tar-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/vscode/vscode-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/zellij/zellij-completions.nu
-          source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/zoxide/zoxide-completions.nu
-        '';
-      }
-    ];
+    #     extraConfig = ''
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/adb/adb-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/bat/bat-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/btm/btm-completions.nu         
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/cargo/cargo-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/curl/curl-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/docker/docker-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/eza/eza-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/git/git-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/gh/gh-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/nix/nix-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/npm/npm-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/pnpm/pnpm-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/rg/rg-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/rustup/rustup-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/scoop/scoop-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/tar/tar-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/vscode/vscode-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/zellij/zellij-completions.nu
+    #       source ${pkgs.nu_scripts}/share/nu_scripts/custom-completions/zoxide/zoxide-completions.nu
+    #     '';
+    #   }
+    # ];
+
+    programs.bash = {
+      enable = true;
+      shellAliases = {
+        vi = "nvim";
+        vim = "nvim";          
+        ls = "eza";
+
+        hm-switch = "home-manager switch --flake $HOME/nix-config/#$USER";
+        nixos-switch = "sudo nixos rebuild switch --flake $HOME/nix-config/#hp-laptop";
+      };
+
+      sessionVariables = {
+        EDITOR = "hx";
+        XDG_DATA_DIRS = "$HOME:.nix-profile/share/:$HOME/.share/:/urs/local/share/:/usr/share";
+      };
+
+      bashrcExtra = ''
+        export PATH="$PATH:/usr/local/bin:$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$HOME/.cargo/bin:$HOME/.local bin"
+
+      '';
+      
+    };
 
 
     #WSL

@@ -135,7 +135,8 @@
     packages = with pkgs; [
     #  thunderbird
     ];
-    shell = pkgs.nushell;
+    # shell = pkgs.nushell;
+    shell = pkgs.bash;
   };
 
   users.defaultUserShell = pkgs.nushell;
