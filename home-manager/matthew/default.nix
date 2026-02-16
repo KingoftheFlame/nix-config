@@ -12,9 +12,7 @@
   imports = with outputs.homeManagerModules;[
     tools
     vscode
-
-    Hyprland
-    
+    Theme  
   ];
 
 

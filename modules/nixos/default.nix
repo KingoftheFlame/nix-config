@@ -6,6 +6,5 @@
   system = import ./system.nix;
   virtualisation = import ./virtualization.nix;
   gaming = import ./gaming.nix;
-  Hyprland = import ./Hyprland;
   bluetooth = import ./bluetooth.nix;
 }

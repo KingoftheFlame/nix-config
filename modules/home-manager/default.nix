@@ -5,7 +5,7 @@
 
   vscode = import ./vscode.nix;
   tools = import ./tools;
+  Theme = import ./theme.nix;
   
-  Hyprland = import ./Hyprland;
   
 }

@@ -18,7 +18,6 @@
       bluetooth
       
       inputs.home-manager.nixosModules.home-manager	
-      # Hyprland
     ];
 
   #options for imported modules
