@@ -15,7 +15,11 @@
 
       sessionVariables = {
         EDITOR = "hx";
-        XDG_DATA_DIRS = "$HOME:.nix-profile/share/:$HOME/.share/:/urs/local/share/:/usr/share";
+        XDG_DATA_DIRS = "
+          $HOME:.nix-profile/share/:$HOME/.share/:/urs/local/share/:/usr/share
+          :/var/lib/flatpak/exports/share:
+          /home/matthew/.local/share/flatpak/exports/share
+          ";
       };
 
       bashrcExtra = ''

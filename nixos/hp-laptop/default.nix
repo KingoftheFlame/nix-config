@@ -24,6 +24,11 @@
   virt_members = ["matthew"];
   
 
+  #flatpack
+  xdg.portal.enable = true;
+  services.flatpak.enable = true;
+
+  
   #package manager configuretion
   nixpkgs = {
     overlays = [
