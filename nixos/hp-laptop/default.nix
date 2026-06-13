@@ -59,6 +59,12 @@
   #cross compile raspberry pi
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
+
+   # Enable Teensy udev rules for non-root users
+  services.udev.packages = [ pkgs.teensy-udev-rules ];
+
+  
+
   networking.hostName = "nix-laptop"; # Define your hostname.
 
 
